@@ -521,7 +521,7 @@ describe('kotlin-runner', function() {
 
 
 function forEachExamples(cb) {
-  const examples = yaml.safeLoad(fs.readFileSync(path.join(__dirname, `../../examples/kotlin.yml`), 'utf8'));
+  const examples = yaml.load(fs.readFileSync(path.join(__dirname, `../../examples/kotlin.yml`), 'utf8'));
   for (const framework of Object.keys(examples)) {
     for (const example of Object.keys(examples[framework])) {
       cb(framework, example, examples[framework][example]);

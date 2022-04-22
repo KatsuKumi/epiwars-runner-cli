@@ -7,7 +7,7 @@ module.exports.run = runner.run;
 
 // loops through the language specific examples within the examples.yml file and calls the cb function with each individual example
 function iterateCodeExamples(language, cb) {
-  var examples = yaml.safeLoad(fs.readFileSync('./examples/' + language + '.yml', 'utf8'));
+  var examples = yaml.load(fs.readFileSync('./examples/' + language + '.yml', 'utf8'));
   if (examples) {
     for (var framework in examples) {
       for (var example in examples[framework]) {

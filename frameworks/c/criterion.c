@@ -23,7 +23,7 @@ ReportHook(PRE_TEST)(struct criterion_test *test) {
 ReportHook(ASSERT)(struct criterion_assert_stats *stats) {
     printf("\n"); // break any lines incase printf was used
     if (stats->passed) {
-      puts("<PASSED::>Test Passed");
+      printf("<PASSED::>Test Passed\n");
     } else {
       printf("<FAILED::>");
       // print the assertion message, replacing \n with <:LF:>
