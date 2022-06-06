@@ -7,6 +7,7 @@
 ReportHook(PRE_ALL)(struct criterion_test_set *tests) {
     setbuf(stdout, NULL);
     setbuf(stderr, NULL);
+    (void)tests;
 }
 
 //  before the test is run
@@ -53,6 +54,7 @@ ReportHook(POST_TEST)(struct criterion_test_stats *stats) {
 
 //  after the test is run
 ReportHook(POST_SUITE)(struct criterion_suite_stats *stats) {
+    (void)stats;
     puts("\n<COMPLETEDIN::>");
 }
 
